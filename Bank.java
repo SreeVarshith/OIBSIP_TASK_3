@@ -1,9 +1,8 @@
 import java.util.*;
 
 class ATM {
-
-    public  final String USER_ID = "varshith";
-    public  final String PASSWORD = "9684";
+    public String USER_ID = "varshith";
+    public String PASSWORD = "9684";
     ArrayList <String> Trh=new ArrayList<String>();
     public double balance=0.0;
     Scanner sc = new Scanner(System.in);
@@ -65,19 +64,17 @@ class Deposit extends Withdraw{
 }
 class Transfer extends Deposit
 {
-
     public void transferAmount()
      {
         System.out.println("Enter the amount to transfer: ");
         double amount = sc.nextDouble();
-
         if (amount <= balance) {
             System.out.println("Enter the recipient's account number: ");
             String rac = sc.next();
-            System.out.println("Transfer successful to the account number..." + rac);
+            System.out.println("Transfer successful to the account number..."+"("+rac+")");
             balance=balance-amount;
             System.out.println("Remaining Balance: " +balance);
-            Trh.add(amount+" rs"+"debited from your account...");
+            Trh.add(amount+" rs"+" debited from your account...");
         } 
         else
         {
@@ -90,7 +87,7 @@ class Transfer extends Deposit
             System.out.println("Welcome to the ATM!");
             System.out.println("********************");
 
-            
+                System.out.println("For Demo trial use User:varshith & pass:9684");
                 System.out.print("Enter your User ID: ");
                 String ud = sc.nextLine();
                 System.out.print("Enter your Password: ");
@@ -117,6 +114,7 @@ class Transfer extends Deposit
                                     break;
                             case 5:
                                 System.out.println("Thank you for using the ATM. Goodbye!");
+                                // work();
                                 return;
                             default:
                                 System.out.println("Invalid option. Please try again.");
