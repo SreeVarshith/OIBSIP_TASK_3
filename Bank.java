@@ -39,9 +39,9 @@ class Withdraw extends TransactionHistory {
         System.out.println("Withdrawing amount...");
 
         if (wd < balance) {
-            double c = balance - wd;
+            balance = balance - wd;
             System.out.println("Withdrawal successful...");
-            System.out.println("Remaining Balance: " + c);
+            System.out.println("Remaining Balance: " + balance);
             Trh.add(wd+" rs"+" debited from your account...");
         } else {
             System.out.println("Insufficient Funds");
